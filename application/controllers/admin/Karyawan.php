@@ -135,4 +135,70 @@ class Karyawan extends CI_Controller {
 		$this->load->view('admin/detailKaryawan',$data);
 	}
 
+	public function tools()
+	{
+		$data['pageTitle'] = "Tools Karyawan";
+		$data['userdata'] = $this->auth_model->datauser($this->session->userdata('email'))->row_array();
+		$this->load->view('admin/Karyawantools',$data);
+	}
+
+	public function editjadwalbydept()
+	{
+		$data['pageTitle'] = "Edit Jadwal Karyawan berdasarkan departemen";
+		$data['userdata'] = $this->auth_model->datauser($this->session->userdata('email'))->row_array();
+		$data['dataDepartment'] = $this->karyawan_model->departmentData()->result_array();
+		$this->load->view('admin/editJadwalbydepartemen',$data);
+	}
+
+	public function editjadwaldept_proses(){
+		$department=str_replace("'", "", htmlspecialchars($this->input->post('department',TRUE),ENT_QUOTES));
+		$inTime=str_replace("'", "", htmlspecialchars($this->input->post('inTime',TRUE),ENT_QUOTES));
+		$outTime=str_replace("'", "", htmlspecialchars($this->input->post('outTime',TRUE),ENT_QUOTES));
+		$update= date('Y-m-d');
+		$result = $this->karyawan_model->editjadwalbydept($department,$inTime,$outTime,$update);
+		if($result){
+			redirect("admin/karyawan/editjadwalbydept?edit=success");
+		}else{
+			redirect("admin/karyawan/editjadwalbydept?edit=gagal");
+		}
+		
+	}
+
+	public function departemen()
+	{
+		$data['pageTitle'] = "Departemen";
+		$data['userdata'] = $this->auth_model->datauser($this->session->userdata('email'))->row_array();
+		$data['dataDepartment'] = $this->karyawan_model->departmentData()->result_array();
+		$this->load->view('admin/departemen',$data);
+	}
+
+	public function tambahdepartemen()
+	{
+		$data['pageTitle'] = "Departemen";
+		$data['userdata'] = $this->auth_model->datauser($this->session->userdata('email'))->row_array();
+		$this->load->view('admin/tambahdepartemen',$data);
+	}
+
+	public function tambahdepartemenProses(){
+		$departemen = str_replace("'", "", htmlspecialchars($this->input->post('departemen',TRUE),ENT_QUOTES));
+		$created = date('Y-m-d');
+		$result = $this->karyawan_model->tambahdepartemen($departemen,$created);
+		if($result){
+			redirect("admin/karyawan/departemen?edit=success");
+		}else{
+			redirect("admin/karyawan/departemen?edit=gagal");
+		}
+	}
+
+	public function hapusdepartemen($id)
+	{
+		$result = $this->karyawan_model->hapusdepartemen($id);
+			if($result){
+				redirect("admin/karyawan/departemen?result=delete_success");
+			}else{
+				redirect("admin/karyawan/departemen?result=delete_faild");
+			}
+	}
+
+
 }

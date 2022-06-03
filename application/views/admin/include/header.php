@@ -52,10 +52,27 @@
                             </a>
                         </li>
                         <li class="side-nav-item">
-                            <a href="<?= base_url('admin/karyawan');?>" class="side-nav-link">
-                                <i class="uil-users-alt"></i>
+                            <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
+                            <i class="uil-users-alt"></i>
                                 <span> Karyawan </span>
+                                <span class="menu-arrow"></span>
                             </a>
+                            <div class="collapse" id="sidebarEcommerce">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="<?= base_url('admin/karyawan/tambah');?>">Tambah Karyawan</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('admin/karyawan');?>">Data Karyawan</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('admin/karyawan/departemen');?>">Departemen</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= base_url('admin/karyawan/tools');?>">Tools</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li class="side-nav-item">
                             <a href="<?= base_url('admin/kehadiran');?>" class="side-nav-link">

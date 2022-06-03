@@ -90,7 +90,21 @@ class karyawan_model extends CI_Model{
         $query= $this->db->query("SELECT count(attendance_id) as jumlah from tbl_attendance where attendance_overtime NOT IN('-','00:00:00') and user_id='$id'");
         return $query;
     }
+    
+    function editjadwalbydept($department,$inTime,$outTime,$update){
+        $result = $this->db->query("UPDATE tbl_users SET in_time='$inTime', out_time='$outTime', update_date='$update' WHERE user_department='$department'");
+        return $query;
+    }
 
+    function tambahdepartemen($departemen,$created){
+        $result = $this->db->query("INSERT INTO tbl_department (department_title, department_status, created_date) VALUES ('$   ','active','$created')");
+        return $query;
+    }
+
+    function hapusdepartemen($id){
+        $query= $this->db->query("DELETE FROM tbl_department WHERE department_id='$id'");
+        return $query;
+    }
 
 
 }
