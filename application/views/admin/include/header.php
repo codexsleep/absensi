@@ -51,7 +51,7 @@
                                 <span> Beranda </span>
                             </a>
                         </li>
-                        <!--
+                        <?php if($userdata['user_type']=='manager'){?>
                         <li class="side-nav-item">
                             <a data-bs-toggle="collapse" href="#sidebarEcommerce" aria-expanded="false" aria-controls="sidebarEcommerce" class="side-nav-link">
                             <i class="uil-users-alt"></i>
@@ -75,14 +75,14 @@
                                 </ul>
                             </div>
                         </li>
-                        -->
+                        <?php } ?>
                         <li class="side-nav-item">
                             <a href="<?= base_url('admin/kehadiran');?>" class="side-nav-link">
                                 <i class="uil-clipboard-alt"></i>
                                 <span> Kehadiran </span>
                             </a>
                         </li>
-                        <!--
+                        <?php if($userdata['user_type']=='manager'){?>
                         <li class="side-nav-item">
                             <a href="<?= base_url('admin/maintanance');?>" class="side-nav-link">
                                 <i class="uil-bag-alt"></i>
@@ -101,7 +101,7 @@
                                 <span> Pengaturan </span>
                             </a>
                         </li>
-                        -->
+                        <?php } ?>
                     </ul>
                     <!-- End Sidebar -->
 
