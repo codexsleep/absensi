@@ -21,8 +21,8 @@
                         <!-- end page title -->
                         <div class="row">
                             <div class="col-auto" style="margin-bottom:20px;">
-                                <a href="<?= base_url('admin/kehadiran/out');?>" class="float-end btn btn-warning btn-sm" style="margin-left:5px;" target="_blank">Open Out WorkClock</a>
-                                <a href="<?= base_url('admin/kehadiran/in');?>" class="float-end btn btn-success btn-sm" target="_blank">Open In WorkClock</a> 
+                                <a href="<?= base_url('admin/kehadiran/out');?>" class="float-end btn btn-warning btn-sm" style="margin-left:5px;">Open Out WorkClock</a>
+                                <a href="<?= base_url('admin/kehadiran/in');?>" class="float-end btn btn-success btn-sm" >Open In WorkClock</a> 
                             </div>
                             <!-- Right Sidebar -->
                             <div class="col-12">

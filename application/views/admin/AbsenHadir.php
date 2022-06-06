@@ -34,7 +34,7 @@
                                         <h3 class="text-dark-50 text-center pb-0 fw-bold" id="waktu">00:00:00</h3>
                                     </div>
                                     <div class="mb-3">
-                                        <input class="form-control" type="number" autofocus name="id" placeholder="Masukkan ID" >
+                                        <input class="form-control" type="password" autofocus name="id" placeholder="Scan disini" >
                                     </div>
                                     <div class="mb-3 mb-0 text-center">
                                         <button class="btn btn-primary" type="submit" name="Proses"> Proses Absensi </button>
